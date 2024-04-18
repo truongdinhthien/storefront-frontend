@@ -1,0 +1,19 @@
+header {
+  background: #33B5E5;
+  color: #fff;
+  
+  .container {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    nav {
+      margin-left: auto;
+      ul {
+        display: flex;
+        gap: 8px;
+      }
+    }
+  }
+}
