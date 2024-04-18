@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Product } from '../../product.types';
 
 @Component({
   selector: 'app-product-item',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.scss',
 })
-export class ProductItemComponent {}
+export class ProductItemComponent {
+  product = input.required<Product>();
+}
