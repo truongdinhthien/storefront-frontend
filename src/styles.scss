@@ -23,3 +23,25 @@ a {
   padding: 0px 40px;
   margin: 0px auto;
 }
+
+button {
+  appearance: none;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+  color: white;
+  border: none;
+  outline: none;
+  background: #33B5E5;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+select {
+  border-radius: 4px;
+  height: 40px;
+  border-color: #ccc;
+  padding: 8px;
+}

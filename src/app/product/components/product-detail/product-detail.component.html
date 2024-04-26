@@ -1,0 +1,31 @@
+<div class="main">
+  @if(product$ | async; as product) {
+    <div class="product-detail">
+      <div class="product-image">
+        <img [src]="product.url" [alt]="product.name" />
+      </div>
+      <div class="product-content">
+        <p class="product-name">{{product.name}}</p>
+        <p class="product-price">{{product.price}}</p>
+
+        <div class="product-control">
+          <select class="product-select">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <button class="product-button">Add to cart</button>
+        </div>
+
+        <div class="product-link">
+          <a routerLink="/">Back to product list</a>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <p>No product found.</p>
+  }
+</div>
+

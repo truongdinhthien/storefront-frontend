@@ -1,1 +1,19 @@
-<p>{{product().name}}</p>
+<div class="main">
+  <a [routerLink]="['./', product.id]" class="product-image">
+    <img [src]="product.url" [alt]="product.name" />
+  </a>
+  <div class="product-content">
+    <p class="product-name">{{product.name}}</p>
+    <p class="product-price">{{product.price}}</p>
+  </div>
+  <div class="product-control">
+    <select [(ngModel)]="quantity" class="product-select">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <button class="product-button" (click)="onAddToCart()">Add to cart</button>
+  </div>
+</div>

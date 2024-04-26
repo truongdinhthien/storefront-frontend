@@ -1,1 +1,8 @@
-<p>cart-list works!</p>
+<div class="main">
+  @for (item of cart.items; track item.id) {
+    <app-cart-item [data]="item" />
+  }
+  <div class="total">
+    <p>{{cart.totalPrice}}</p>
+  </div>
+</div>
