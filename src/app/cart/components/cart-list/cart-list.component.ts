@@ -1,6 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CartService } from '../../providers/cart.service';
 import { CartItemComponent } from '../cart-item/cart-item.component';
+import { Cart } from '../../cart.types';
 
 @Component({
   selector: 'app-cart-list',
@@ -9,12 +10,8 @@ import { CartItemComponent } from '../cart-item/cart-item.component';
   templateUrl: './cart-list.component.html',
   styleUrl: './cart-list.component.scss',
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent {
   cartService = inject(CartService);
 
-  cart = this.cartService.getCart();
-
-  ngOnInit(): void {
-    this.cart = this.cartService.getCart();
-  }
+  @Input({ required: true }) cart!: Cart;
 }

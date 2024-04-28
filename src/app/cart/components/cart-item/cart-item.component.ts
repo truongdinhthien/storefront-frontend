@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CartItem } from '../../cart.types';
+import { CartService } from '../../providers/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -9,5 +10,16 @@ import { CartItem } from '../../cart.types';
   styleUrl: './cart-item.component.scss',
 })
 export class CartItemComponent {
+  cartService = inject(CartService);
   @Input({ required: true }) data!: CartItem;
+
+  updateItem(value: string) {
+    const numberValue = +value;
+    const updateValue = numberValue - this.data.quantity;
+    this.cartService.updateQuantity(this.data.id, updateValue);
+  }
+
+  deleteItem() {
+    this.cartService.deleteItem(this.data.id);
+  }
 }

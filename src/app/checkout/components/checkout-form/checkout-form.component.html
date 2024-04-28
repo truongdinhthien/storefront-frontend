@@ -1,0 +1,19 @@
+<form class="main">
+  <div class="input-group">
+    <label [htmlFor]="fullName">Full name</label>
+    <input #fullName name="fullName" placeholder="(minimum 3 characters)"/>
+  </div>
+
+  <div class="input-group">
+    <label [htmlFor]="fullName">Address</label>
+    <input #fullName name="fullName" placeholder="(minimum 6 characters)" />
+  </div>
+
+  <div class="input-group">
+    <label [htmlFor]="fullName">Credit card number</label>
+    <input #fullName name="fullName" placeholder="(16-digit number)"/>
+  </div>
+
+  <div class="form-desc">We'll never share your payment details with anyone else.</div>
+  <button type="submit">Submit</button>
+</form>

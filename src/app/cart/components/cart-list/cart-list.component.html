@@ -1,8 +1,10 @@
 <div class="main">
-  @for (item of cart.items; track item.id) {
-    <app-cart-item [data]="item" />
-  }
+  <div class="cart-list">
+    @for (item of cart.items; track item.id) {
+      <app-cart-item [data]="item" />
+    }
+  </div>
   <div class="total">
-    <p>{{cart.totalPrice}}</p>
+    <p><span>Total: </span>{{cart.totalPrice}}</p>
   </div>
 </div>

@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  gap: 24px;
+
+  .cart-image {
+    width: 120px;
+    flex-shrink: 0;
+
+    > img {
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+
+  .cart-content {
+    padding-top: 12px;
+
+    .cart-name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .cart-price {
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    .cart-control {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .btn-delete {
+      margin-top: 12px;
+      width: 100%;
+
+      background: rgb(210, 29, 29);
+    }
+  }
+}

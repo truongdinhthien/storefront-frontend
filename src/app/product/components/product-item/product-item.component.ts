@@ -23,5 +23,7 @@ export class ProductItemComponent {
       productInfo: this.product,
       quantity: +this.quantity,
     });
+
+    window.alert('Your product has been added to the cart!');
   }
 }

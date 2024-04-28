@@ -1,10 +1,14 @@
 <div class="main">
-  <div class="wrapper">
-    <div class="cart-left">
-      <app-cart-list />
+  @if (cart.items.length) {
+    <div class="wrapper">
+      <div class="cart-left">
+        <app-cart-list [cart]="cart"/>
+      </div>
+      <div class="cart-right">
+        <app-checkout-form />
+      </div>
     </div>
-    <div class="cart-right">
-      form
-    </div>
-  </div>
+  } @else {
+    <div class="empty">No cart items</div>
+  }
 </div>
