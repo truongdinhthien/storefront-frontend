@@ -1,19 +1,42 @@
-<form class="main">
+<form class="main" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="input-group">
-    <label [htmlFor]="fullName">Full name</label>
-    <input #fullName name="fullName" placeholder="(minimum 3 characters)"/>
+    <label [htmlFor]="fullNameNode">Full name</label>
+    <input
+      #fullNameNode
+      formControlName="fullName"
+      placeholder="(minimum 3 characters)"
+      [class.invalid]="invalidForm('fullName')"
+    />
+    @if (invalidForm('fullName') && fullName?.hasError("required")) {<span class="alert-error">Full name is required.</span>}
+    @if (invalidForm('fullName') && fullName?.hasError("minlength")) {<span class="alert-error">The minimum length for full name is 3</span>}
   </div>
 
   <div class="input-group">
-    <label [htmlFor]="fullName">Address</label>
-    <input #fullName name="fullName" placeholder="(minimum 6 characters)" />
+    <label [htmlFor]="addressNode">Address</label>
+    <input
+      #addressNode
+      formControlName="address"
+      placeholder="(minimum 6 characters)"
+      [class.invalid]="invalidForm('address')"
+    />
+    @if (invalidForm('address') && address?.hasError("required")) {<span class="alert-error">Address is required.</span>}
+    @if (invalidForm('address') && address?.hasError("minlength")) {<span class="alert-error">The minimum length for address is 6</span>}
   </div>
 
   <div class="input-group">
-    <label [htmlFor]="fullName">Credit card number</label>
-    <input #fullName name="fullName" placeholder="(16-digit number)"/>
+    <label [htmlFor]="creditCardNode">Credit card number</label>
+    <input
+      #creditCardNode
+      formControlName="creditCard"
+      placeholder="(16-digit number)" 
+      [class.invalid]="invalidForm('creditCard')"
+    />
+    @if (invalidForm('creditCard') && creditCard?.hasError("required")) {<span class="alert-error">Credit card is required.</span>}
+    @if (invalidForm('creditCard') && creditCard?.hasError("minlength")) {<span class="alert-error">The minimum length for credit card is 16</span>}
   </div>
 
-  <div class="form-desc">We'll never share your payment details with anyone else.</div>
+  <div class="form-desc">
+    We'll never share your payment details with anyone else.
+  </div>
   <button type="submit">Submit</button>
 </form>

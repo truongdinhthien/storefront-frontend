@@ -5,7 +5,7 @@
         <app-cart-list [cart]="cart"/>
       </div>
       <div class="cart-right">
-        <app-checkout-form />
+        <app-checkout-form (checkoutSubmit)="onCheckoutSubmit($event)"/>
       </div>
     </div>
   } @else {

@@ -63,4 +63,13 @@ export class CartService {
     // Sync to store
     this.storage.setItem(this.storageKey, JSON.stringify(cart));
   }
+
+  reset() {
+    this.cart = {
+      items: [],
+      totalPrice: 0,
+      totalQuantity: 0,
+    };
+    this.saveChanges(this.cart);
+  }
 }

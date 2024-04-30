@@ -1,1 +1,9 @@
-<p>checkout-success works!</p>
+<div class="main">
+  <p class="checkout-heading">Success! 🎉</p>
+  <div class="checkout-content">
+    <p>Thank you, <b>{{ completedCheckout?.information?.fullName }}</b></p>
+    <p>Your <b>${{completedCheckout?.total}}</b> order is confirmed</p>
+    <p>Please allow 1-3 business day(s) for shipping.</p>
+  </div>
+  <a [routerLink]="['/']" class="button">Back to product list</a>
+</div>

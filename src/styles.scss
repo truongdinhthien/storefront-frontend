@@ -24,7 +24,7 @@ a {
   margin: 0px auto;
 }
 
-button {
+button, .button {
   appearance: none;
   height: 40px;
   display: inline-flex;
@@ -55,10 +55,19 @@ input {
   padding: 8px;
 }
 
+input.invalid {
+  border: 1px solid #d21d1d;
+}
+
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 4px
+}
+
+.alert-error {
+  font-size: 14px;
+  color: #d21d1d;
 }
 
 label {

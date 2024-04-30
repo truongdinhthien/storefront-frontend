@@ -4,7 +4,7 @@
   </div>
   <div class="cart-content">
     <p class="cart-name">{{data.productInfo.name}}</p>
-    <p class="cart-price">{{data.price * data.quantity}}</p>
+    <p class="cart-price">${{data.price * data.quantity}}</p>
     <div class="cart-control">
       <span>Amount: </span>
       <input #input type="number" [value]="data.quantity" min="1" (keydown)="false" (change)="updateItem(input.value)"/>
