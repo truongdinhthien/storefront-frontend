@@ -20,6 +20,8 @@ export class CartItemComponent {
   }
 
   deleteItem() {
-    this.cartService.deleteItem(this.data.id);
+    if (confirm('Are you sure you want to delete cart item?')) {
+      this.cartService.deleteItem(this.data.id);
+    }
   }
 }
