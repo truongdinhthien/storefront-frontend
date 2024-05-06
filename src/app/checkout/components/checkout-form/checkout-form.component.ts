@@ -22,8 +22,15 @@ export class CheckoutFormComponent {
 
   form = this.fb.group({
     fullName: ['', [Validators.required, Validators.minLength(3)]],
-    address: ['', [Validators.required], Validators.minLength(6)],
-    creditCard: ['', [Validators.required, Validators.minLength(16)]],
+    address: ['', Validators.required, Validators.minLength(6)],
+    creditCard: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^[0-9]*$'),
+        Validators.minLength(16),
+      ],
+    ],
   });
 
   get fullName() {
@@ -39,7 +46,6 @@ export class CheckoutFormComponent {
   }
 
   onSubmit() {
-    console.log(this.form.invalid);
     if (this.form.invalid) {
       this.form.updateValueAndValidity();
       this.form.markAllAsTouched();

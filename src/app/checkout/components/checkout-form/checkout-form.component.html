@@ -33,6 +33,7 @@
     />
     @if (invalidForm('creditCard') && creditCard?.hasError("required")) {<span class="alert-error">Credit card is required.</span>}
     @if (invalidForm('creditCard') && creditCard?.hasError("minlength")) {<span class="alert-error">The minimum length for credit card is 16</span>}
+    @if (invalidForm('creditCard') && creditCard?.hasError("pattern")) {<span class="alert-error">Credit card should only contain numbers</span>}
   </div>
 
   <div class="form-desc">
